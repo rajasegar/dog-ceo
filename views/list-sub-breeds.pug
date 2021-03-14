@@ -4,4 +4,9 @@ block body
     include includes/sidebar.pug
     main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
       .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
-        h1.h2 Dogs
+        h1.h2 #{breedName} - Sub-breeds
+      .d-flex.flex-row.flex-wrap
+        ul
+          each sub in subBreeds
+            li
+              a(href="/subbreeds/" + sub.breed + '/' + sub.id) #{sub.name}

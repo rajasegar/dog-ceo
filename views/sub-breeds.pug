@@ -4,7 +4,12 @@ block body
     include includes/sidebar.pug
     main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
       .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
-        h1.h2 #{breedName}
+        nav(style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb")
+          ol.breadcrumb
+            li.breadcrumb-item <a href="/">Home</a>
+            li.breadcrumb-item 
+              a(href="/breeds/sub/" + breed) #{breedName}
+            li.breadcrumb-item.active(aria-current="page") #{subBreed}
       .d-flex.flex-row.flex-wrap
         each image in images
           .card.mb-3.col-sm-2
